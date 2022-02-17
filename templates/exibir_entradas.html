@@ -1,0 +1,20 @@
+{% extends 'layout.html'%}
+{% block corpo %}
+<form action="/inserir" methods="POST" class="ins_entrada">
+    <dl>
+        <dt>Título:
+        <dd><input type="text" size="30" name="titulo">
+        <dt>Texto:
+        <dd><textarea rows="5" cols="40" name="texto"></textarea>
+        <dd><imput type="submit" value="Publicar">
+    </dl>
+    
+</form>
+<ul class="entradas">
+    {% for post in post %}
+         <li>
+            <h2>{{post["titulo"]}}</h2>
+            {{post["texto"]}}
+         </li>
+{% endfor %}
+</ul>
